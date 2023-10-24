@@ -60,7 +60,7 @@ const ImageSlider = () => {
                 <div className='absolute top-1/3 left-24 text-white'>
                     <div>{greet}</div>
                 </div>
-                <img src={image.acf.images.url} className='w-full'/>
+                <img src={image.acf.images.url} className='h-full w-full'/>
             </SwiperSlide>
         )}
         </Swiper>
