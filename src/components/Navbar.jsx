@@ -39,7 +39,9 @@ const Navbar = () => {
                         </li>
                     ))}
                 </ul>
-            </nav> 
+            </nav>
+            <hr className="border-2 mt-1 border-[#027333]"/>
+            <hr className="border-4 border-[#D90404]"/>
         </>
     );
 }
