@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Timeline } from 'react-twitter-widgets';
 
 const SideBar = () => {
     const [events, setEvents] = useState([]);
@@ -26,7 +27,6 @@ const SideBar = () => {
                     <h2 class="text-xl font-bold">
                         Schedule
                     </h2>
-                    
                     <div class="flow-root mx-auto mt-5">
                         <div class="-my-4 divide-y divide-white">
                             {events.map((event) => (
@@ -46,6 +46,17 @@ const SideBar = () => {
                 </div>
             </section>
         </div>
+        <div className="mt-10">
+            <Timeline
+                dataSource={{
+                    sourceType: 'profile',
+                    screenName: 'hasanuddin_univ'
+                }}
+                options={{
+                    height: '800'
+                }}
+            />
+            </div>
         </>
     );
 }

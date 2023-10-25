@@ -34,17 +34,6 @@ const PostDetails = () => {
             <div className="divider divider-horizontal"></div>
             <div className="mt-14 lg:block sm:hidden mx-auto">
                 <SideBar />
-                <div className="mt-10">
-                    <Timeline
-                    dataSource={{
-                        sourceType: 'profile',
-                        screenName: 'hasanuddin_univ'
-                    }}
-                    options={{
-                        height: '800'
-                    }}
-                    />
-                </div>
             </div>      
         </div>
         </>
