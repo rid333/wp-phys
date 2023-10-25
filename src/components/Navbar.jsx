@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [navbars, setNavbars] = useState([]);
@@ -29,12 +30,12 @@ const Navbar = () => {
                                     <summary className='rounded-none'>{item.title}</summary>
                                     <ul className="p-2 rounded-none bg-white z-10">
                                         {item.children.map((child) => (
-                                            <li key={child.ID}><a href={child.url} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</a></li>
+                                            <li key={child.ID}><a href={`/${item.object_slug}/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</a></li>
                                         ))}
                                     </ul>
                                 </details>
                             ) : (
-                                <a href={item.url} className='rounded-none'>{item.title}</a>   
+                                <a href={`/${item.object_slug}`} className='rounded-none'>{item.title}</a>   
                             )}
                         </li>
                     ))}
