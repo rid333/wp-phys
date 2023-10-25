@@ -1,10 +1,26 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import SideBar from "../components/SideBar";
 import elinshome from "../assets/home/elins-home.jpg";
 
 
 const PostDetails = () => {
     const [newsDetails, setNewsDetails] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(
+                    "http://localhost:8000/wp-json/wp/v2/posts/14334"
+                );
+                setNewsDetails(res.data);
+                console.log(res.data)
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        fetchData();
+    }, []);
 
     return (
         <>
@@ -17,7 +33,7 @@ const PostDetails = () => {
                             <li><a>News</a></li>
                         </ul>
                     </div>
-                    <h1 dangerouslySetInnerHTML={{ __html: news.title.rendered }} className="text-4xl font-bold"></h1>
+                    <h1 dangerouslySetInnerHTML={{ __html: newsDetails.title?.rendered }} className="text-4xl font-bold"></h1>
                     <div className="text-sm font-light">
                         <p>By <span className="font-bold">fisikaunhas</span></p>
                         <p>Mon October 23, 2023 </p>
@@ -27,7 +43,7 @@ const PostDetails = () => {
                     <img src={elinshome} alt="" className=" w-[500px]" />
                     <figcaption class="mt-2 text-sm text-center italic">Image caption</figcaption>
                 </figure>
-                <article dangerouslySetInnerHTML={{ __html: news.content.rendered}} className="flex flex-col text-xl gap-y-5 text-justify"></article>
+                <article dangerouslySetInnerHTML={{ __html: newsDetails.content?.rendered}} className="flex flex-col text-xl gap-y-5 text-justify"></article>
             </div>
             <div className="divider divider-horizontal"></div>
             <div className="mt-14 lg:block sm:hidden mx-auto">
