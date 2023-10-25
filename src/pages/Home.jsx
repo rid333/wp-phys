@@ -126,15 +126,15 @@ const Home = () => {
                 >  
                 {news?.slice(0, 5).map((news) =>
                     <SwiperSlide key={news.id}>
-                    <div class="max-w-sm shadow-lg">
+                    <div class="max-w-sm shadow-xl p-0">
                         <a href={news.link}>
-                            <img src={news._embedded['wp:featuredmedia']['0'].source_url} className='h-64' alt="" />
+                            <img src={news._embedded['wp:featuredmedia']['0'].source_url} className='h-60 mx-auto' alt="" />
                         </a>
-                        <div class="p-5">
+                        <div class="p-8">
                             <a href={news.link}>
                                 <h5 dangerouslySetInnerHTML={{ __html: news.title.rendered }} class="mb-2 text-2xl font-bold tracking-tight text-neutral"></h5>
                             </a>
-                            <p dangerouslySetInnerHTML={{ __html: news.excerpt.rendered.slice(0, 100) }} class="mb-3 font-normal text-gray-800"></p>
+                            <p dangerouslySetInnerHTML={{ __html: news.excerpt.rendered.slice(0, 100) }} class="mb-3 font-normal text-neutral"></p>
                             <a href={news.link} class="inline-flex btn btn-secondary btn-sm rounded-none items-center text-sm font-medium text-center text-white">
                                 Read more
                                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

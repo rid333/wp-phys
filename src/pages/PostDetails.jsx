@@ -1,4 +1,4 @@
-import SideBar from "./SideBar";
+import SideBar from "../components/SideBar";
 import elinshome from "../assets/home/elins-home.jpg";
 import { Timeline } from 'react-twitter-widgets';
 
