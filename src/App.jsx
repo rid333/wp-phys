@@ -14,7 +14,7 @@ const App = () => {
       <Navbar />
       <Routes>
           <Route index element={<Home />} />
-          <Route path="news" element={<PostDetails />} />
+          <Route path="news/:id" element={<PostDetails />} />
           <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

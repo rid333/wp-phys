@@ -23,19 +23,26 @@ const Navbar = () => {
         <>
             <nav className='navbar-center'>
                 <ul className='flex menu menu-horizontal px-1 justify-center gap-x-16 max-w-screen-x text-base font-bold'>
-                    {navbars.items?.map((item) => (
+                    {navbars.items?.[0] && (
+                        <li key={navbars.items[0].ID}>
+                        <Link to='/' className='rounded-none'>
+                            {navbars.items[0].title}
+                        </Link>
+                        </li>
+                    )}
+                    {navbars.items?.slice(1).map((item) => (
                         <li key={item.ID}>
                             {item.children ? (
                                 <details>
                                     <summary className='rounded-none'>{item.title}</summary>
                                     <ul className="p-2 rounded-none bg-white z-10">
                                         {item.children.map((child) => (
-                                            <li key={child.ID}><a href={`/${item.object_slug}/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</a></li>
+                                            <li key={child.ID}><Link to={`/${item.object_slug}/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</Link></li>
                                         ))}
                                     </ul>
                                 </details>
                             ) : (
-                                <a href={`/${item.object_slug}`} className='rounded-none'>{item.title}</a>   
+                                <Link to={`/${item.object_slug}`} className='rounded-none'>{item.title}</Link>   
                             )}
                         </li>
                     ))}

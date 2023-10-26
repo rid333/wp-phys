@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import ImageSlider from '../components/ImageSlider';
 import {motion} from 'framer-motion';
@@ -103,20 +104,20 @@ const Home = () => {
                     {news?.slice(0, 5).map((news) =>
                         <SwiperSlide key={news.id}>
                         <div class="max-w-sm shadow-xl p-0">
-                            <a href={news.link}>
+                            <Link to={`/news/${news.id}`}>
                                 <img src={news._embedded['wp:featuredmedia']['0'].source_url} className='h-60 mx-auto' alt="" />
-                            </a>
+                            </Link>
                             <div class="p-8">
-                                <a href={news.link}>
+                                <Link to={`/news/${news.id}`}>
                                     <h5 dangerouslySetInnerHTML={{ __html: news.title.rendered }} class="mb-2 text-2xl font-bold tracking-tight text-neutral"></h5>
-                                </a>
+                                </Link>
                                 <p dangerouslySetInnerHTML={{ __html: news.excerpt.rendered.slice(0, 100) }} class="mb-3 font-normal text-neutral"></p>
-                                <a href={news.link} class="inline-flex btn btn-secondary btn-sm rounded-none items-center text-sm font-medium text-center text-white">
+                                <Link to={`/news/${news.id}`} class="inline-flex btn btn-secondary btn-sm rounded-none items-center text-sm font-medium text-center text-white">
                                     Read more
                                     <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                     </svg>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         </SwiperSlide>
