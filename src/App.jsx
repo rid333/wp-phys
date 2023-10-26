@@ -5,6 +5,7 @@ import PostDetails from './pages/PostDetails'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
 import Home from './pages/Home'
+import NewsList from './pages/NewsList';
 import Error404 from './pages/Error404';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Navbar />
       <Routes>
           <Route index element={<Home />} />
+          <Route path="news" element={<NewsList />} />
           <Route path="news/:id" element={<PostDetails />} />
           <Route path="*" element={<Error404 />} />
       </Routes>

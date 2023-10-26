@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <>
             <nav className='navbar-center'>
-                <ul className='flex menu menu-horizontal px-1 justify-center gap-x-16 max-w-screen-x text-base font-bold'>
+                <ul className='flex menu menu-horizontal px-1 justify-center gap-x-10 max-w-screen-x text-base font-bold'>
                     {navbars.items?.[0] && (
                         <li key={navbars.items[0].ID}>
                         <Link to='/' className='rounded-none'>
