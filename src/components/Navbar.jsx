@@ -37,7 +37,7 @@ const Navbar = () => {
                                     <summary className='rounded-none'>{item.title}</summary>
                                     <ul className="p-2 rounded-none bg-white z-10">
                                         {item.children.map((child) => (
-                                            <li key={child.ID}><Link to={`/${item.object_slug}/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</Link></li>
+                                            <li key={child.ID}><Link to={`/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</Link></li>
                                         ))}
                                     </ul>
                                 </details>
