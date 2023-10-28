@@ -7,6 +7,7 @@ import './index.css'
 import Home from './pages/Home'
 import NewsList from './pages/NewsList';
 import Error404 from './pages/Error404';
+import AcademicStaffList from './pages/AcademicStaffDetails';
 
 const App = () => {
   return (
@@ -15,8 +16,15 @@ const App = () => {
       <Navbar />
       <Routes>
           <Route index element={<Home />} />
+          
+          <Route path="academic-staff" element={<AcademicStaffList />} />
+          <Route path="academic-staff/:id" element={<NewsDetails />} />
+          
+          <Route path="administrative" element={<NewsList />} />
+          
           <Route path="news" element={<NewsList />} />
-          <Route path="news/:id" element={<NewsDetails />} />
+          <Route path="news/:newsId" element={<NewsDetails />} />
+          
           <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />

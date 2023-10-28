@@ -87,11 +87,11 @@ const NewsList = () => {
                         breakLabel={"..."}
                         breakClassName={"px-4 h-9 font-semibold text-lg text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"}
                         pageCount={numberOfPages}
-                        activeLinkClassName="bg-gray-500 text-white"
+                        activeLinkClassName={"bg-gray-700 text-white"}
                         pageRangeDisplayed={1}
                         onPageChange={handlePageClick}
                         containerClassName={"mb-10 flex justify-center -space-x-px h-8 text-sm"}
-                        pageLinkClassName={"flex items-center justify-center px-4 h-9 font-semibold text-lg text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"}
+                        pageLinkClassName={"flex items-center justify-center px-4 h-9 font-semibold text-normal text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"}
                     />
                 </div>
                 <div className="divider divider-horizontal"></div>

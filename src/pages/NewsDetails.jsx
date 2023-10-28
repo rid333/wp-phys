@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 const NewsDetails = () => {
     const [newsDetails, setNewsDetails] = useState([]);
-    const { id } = useParams();
+    const { newsId } = useParams();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:8000/wp-json/wp/v2/posts/"+ id + "?_embed"
+                    "http://localhost:8000/wp-json/wp/v2/posts/"+ newsId + "?_embed"
                 );
                 setNewsDetails(res.data);
                 console.log(res.data)
@@ -55,7 +55,7 @@ const NewsDetails = () => {
                     <article dangerouslySetInnerHTML={{ __html: newsDetails.content?.rendered}} className="flex flex-col gap-y-4 text-base text-justify"></article>
                 </div>
                 <div className="divider divider-horizontal"></div>
-                <div className="lg:block sm:hidden mx-auto bg-white p-10 rounded-lg h-full">
+                <div className="sticky top-0 lg:block sm:hidden mx-auto bg-white p-10 rounded-lg h-full">
                     <SideBar />
                 </div>      
             </div>
