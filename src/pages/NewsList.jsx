@@ -33,7 +33,7 @@ const NewsList = () => {
     };
 
     return (
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 text-black">
             <div className="flex max-w-7xl m-auto py-10 px-10 gap-x-5">
                 <div className="w-24 sm:w-full bg-white p-10 rounded-lg">
                     <div className="font-semibold breadcrumbs">
@@ -63,10 +63,10 @@ const NewsList = () => {
                                 </div>
                                 <Link to={`/news/${post.id}`} class="mb-3 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
                                     <h5 dangerouslySetInnerHTML={{ __html:post.title.rendered }} className="mb-3 text-lg font-bold"></h5>
-                                    <p class="mb-6 text-neutra">
+                                    <p class="mb-6">
                                     <small>Published {post.date?.slice(0,10)} by <a href="#!">fisikaunhas</a></small>
                                     </p>
-                                    <p dangerouslySetInnerHTML={{ __html:post.excerpt.rendered.slice(0,200) }} class="text-neutral">
+                                    <p dangerouslySetInnerHTML={{ __html:post.excerpt.rendered.slice(0,200) }} >
                                     </p>
                                 </Link>
                             </div>

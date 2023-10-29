@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import NewsList from './pages/NewsList';
 import Error404 from './pages/Error404';
 import AcademicStaffList from './pages/AcademicStaffDetails';
+import ResearchDetails from './pages/ResearchDetails';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
           
           <Route path="academic-staff" element={<AcademicStaffList />} />
           <Route path="academic-staff/:id" element={<NewsDetails />} />
+
+          <Route path="research-group/:slug" element={<ResearchDetails />} />
           
           <Route path="administrative" element={<NewsList />} />
           

@@ -25,7 +25,7 @@ const NewsDetails = () => {
     }, []);
 
     return (
-        <div className="bg-gray-200">
+        <div className="bg-gray-200 text-black">
             <div className="flex max-w-7xl m-auto py-10 px-10 gap-x-6">
                 <div className="w-2/3 sm:w-full bg-white p-10 rounded-lg">
                     <title className="flex flex-col gap-y-4 mb-5">

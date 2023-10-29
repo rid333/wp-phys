@@ -21,6 +21,7 @@ const Navbar = () => {
 
     return (
         <>
+            <div className='sticky top-0 bg-white text-black z-10'>
             <nav className='navbar-center'>
                 <ul className='flex menu menu-horizontal px-1 justify-center gap-x-10 max-w-screen-x text-base font-bold'>
                     {navbars.items?.[0] && (
@@ -37,7 +38,7 @@ const Navbar = () => {
                                     <summary className='rounded-none'>{item.title}</summary>
                                     <ul className="p-2 rounded-none bg-white z-10">
                                         {item.children.map((child) => (
-                                            <li key={child.ID}><Link to={`/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</Link></li>
+                                            <li key={child.ID}><Link to={`/${item.object_slug}/${child.object_slug}`} className='rounded-none hover:bg-primary hover:text-white'>{child.title}</Link></li>
                                         ))}
                                     </ul>
                                 </details>
@@ -50,6 +51,7 @@ const Navbar = () => {
             </nav>
             <hr className="border-2 mt-1 border-[#027333]"/>
             <hr className="border-4 border-[#D90404]"/>
+            </div>
         </>
     );
 }
